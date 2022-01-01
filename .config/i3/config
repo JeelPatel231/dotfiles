@@ -212,11 +212,11 @@ exec xinput --set-prop 18 'libinput Accel Profile Enabled' 0, 1
 for_window [class="^.*"] border none
 
 # DROP DOWN TERMINAL
-bindsym F13 [instance="dropdown"] scratchpad show; [instance="dropdown"] move position 0px 0px
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 1920px 500px
-for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id st -n dropdown
+bindsym F13 [title="dropdown"] scratchpad show; [title="dropdown"] move position 0px 0px
+for_window [title="dropdown"] floating enable
+for_window [title="dropdown"] resize set 1920px 500px
+for_window [title="dropdown"] move scratchpad
+exec --no-startup-id konsole -p tabtitle='dropdown'
 
 #set wallpaper 
 exec --no-startup-id feh --bg-fill ~/wallpapers/image_2021-12-29_03-30-00.png
