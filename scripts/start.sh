@@ -3,8 +3,10 @@
 sudo pacman -S git --noconfirm
 
 # clone my repo so files gets placed
-git clone https://github.com/jeelpatel231/dotfiles ~
-rm -rf ~/.git
+git init
+git remote add origin https://github.com/jeelpatel231/dotfiles
+git pull origin master
+rm -rf .git scripts
 
 # install yay
 git clone https://aur.archlinux.org/yay.git
