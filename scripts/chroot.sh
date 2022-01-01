@@ -36,12 +36,12 @@ sed -i "s/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
 
 
 # optional i3 setup with sddm
-echo "optional next script to setup i3 and sddm"
-read optional
-if [[ $optional == y ]]
-then
-echo "'y' is selected, continuing."
-su -c 'bash -c $(curl -fsSL https://raw.githubusercontent.com/JeelPatel231/dotfiles/master/scripts/start.sh)' - $username
-else
-echo "'not y, setup finished.'"
-fi
+# echo "optional next script to setup i3 and sddm"
+# read optional
+# if [[ $optional == y ]]
+# then
+# echo "'y' is selected, continuing."
+# su -c 'bash -c $(curl -fsSL https://raw.githubusercontent.com/JeelPatel231/dotfiles/master/scripts/start.sh)' - $username
+# else
+# echo "'not y, setup finished.'"
+# fi
