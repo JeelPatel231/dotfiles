@@ -19,8 +19,10 @@ sudo pacman -S i3-gaps xorg sddm --noconfirm
 yay -S i3status --noconfirm
 sudo systemctl enable sddm.service
 
-# install maim for screenshot and playerctl for working with media
-sudo pacman -S playerctl maim --noconfirm
+# install maim for screenshot,
+# playerctl for working with media,
+# feh for wallpaper  ----> ADD YOUR WALLPAPERS TO ~/wallpapers/ DIRECTORY <-----
+sudo pacman -S playerctl maim feh --noconfirm
 
 # install picom compositor
 yay -S picom-ibhagwan-git --noconfirm

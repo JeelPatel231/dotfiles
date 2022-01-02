@@ -219,7 +219,7 @@ for_window [title="dropdown"] move scratchpad
 exec --no-startup-id konsole -p tabtitle='dropdown'
 
 #set wallpaper 
-exec --no-startup-id feh --bg-fill ~/wallpapers/image_2021-12-29_03-30-00.png
+exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/*
 #screenshots
 bindsym Print exec --no-startup-id maim -s | xclip -selection c -t image/png
 bindsym Ctrl+Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshot-$(date).png"
