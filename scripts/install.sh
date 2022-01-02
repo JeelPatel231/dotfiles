@@ -2,16 +2,13 @@
 
 sed -i "s/#ParallelDownloads/ParallelDownloads/" /etc/pacman.conf
 
-echo "root : "
-read root
-echo "boot : "
-read boot
+read -p "root : " root
+read -p "boot : " boot
 
 mkfs.ext4 /dev/$root
 e2label /dev/$root root
 
-echo "first setup/linux only?  [y/n]"
-read bootcheck
+read -p "first setup/linux only?  [y/n] : " bootcheck
 
 if [[ $bootcheck == y ]]
 then

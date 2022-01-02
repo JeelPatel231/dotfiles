@@ -24,8 +24,7 @@ echo -e 'title "Arch Linux"\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\n
 systemctl enable NetworkManager
 systemctl enable sddm
 
-echo "enter username : "
-read username
+read -p "enter username : " username
 useradd -m -g users -G wheel -s /bin/bash $username
 echo "enter user $username password: "
 passwd $username
