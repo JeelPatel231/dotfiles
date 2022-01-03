@@ -197,7 +197,7 @@ bar {
 }
 
 # start picom-ibhagwan compositor with GLX
-exec picom --config ~/.config/picom/picom.conf --backend glx -b
+exec picom --config ~/.config/picom/picom.conf --backend glx --experimental-backends -b
 
 # yakuake top 0 config
 for_window [instance="dropdown"] move position 0px 0px
