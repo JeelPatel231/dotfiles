@@ -22,7 +22,13 @@ sudo systemctl enable sddm.service
 # install maim for screenshot,
 # playerctl for working with media,
 # feh for wallpaper  ----> ADD YOUR WALLPAPERS TO ~/wallpapers/ DIRECTORY <-----
-sudo pacman -S playerctl maim feh --noconfirm
+# xclip to copy main content to clipboard
+sudo pacman -S playerctl maim feh xclip --noconfirm
+
+# laptop specific addons
+sudo pacman -S light
+#add user to video group so light command works
+sudo usermod -aG video $USER
 
 # install picom compositor
 yay -S picom-ibhagwan-git --noconfirm
