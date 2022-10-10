@@ -15,15 +15,14 @@ yes | makepkg -si
 cd .. && rm -rf yay
 
 # install i3 gaps, xorg
-sudo pacman -S i3-gaps xorg sddm --noconfirm
+sudo pacman -S i3-gaps xorg --noconfirm
 yay -S i3status --noconfirm
-sudo systemctl enable sddm.service
 
-# install maim for screenshot,
+# install flameshot for screenshot,
 # playerctl for working with media,
 # feh for wallpaper  ----> ADD YOUR WALLPAPERS TO ~/wallpapers/ DIRECTORY <-----
 # xclip to copy main content to clipboard
-sudo pacman -S playerctl maim feh xclip --noconfirm
+sudo pacman -S playerctl flameshot feh xclip --noconfirm
 
 # laptop specific addons
 sudo pacman -S light

@@ -1,6 +1,13 @@
 # Path to your oh-my-bash installation.
 export OSH=/home/jeel/.oh-my-bash
 
+# when using TTY, oh-my-bash agnoster looks UGLY
+# so on tty, use sh instead of bash
+if [ `tput colors` != "256" ]; then
+  exec sh -l;
+fi
+
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
 OSH_THEME="agnoster"
@@ -102,12 +109,20 @@ source $OSH/oh-my-bash.sh
 
 
 # my additions
-alias poco="scrcpy -s f703b803 --always-on-top -w"
-
 alias gfx="vblank_mode=0 primusrun"
 alias vgfx="vblank_mode=0 pvkrun"
 
 alias ls="ls --color=never"
 
-alias neofetch="curl -s https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch | bash"
-alias pfetch="curl -s https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch | bash"
+#alias neofetch="bash -c $(curl -fsSL https://raw.githubusercontent.com/dylanaraps/neofetch/master/neofetch)'"
+#alias pfetch="bash -c $(curl -fsSL https://raw.githubusercontent.com/dylanaraps/pfetch/master/pfetch)'"
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
+

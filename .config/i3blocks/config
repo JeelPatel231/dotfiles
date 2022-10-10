@@ -1,0 +1,18 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=20
+markup=none
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=5
+color=#ffcc00
+
+[battery]
+command=echo "$(cat /sys/class/power_supply/BAT*/status) : $(cat /sys/class/power_supply/BAT*/capacity)"
+interval=5
+
+[volume]
+command=pactl list short | grep -i running | grep -Eo "^[0-9]+" | xargs pactl get-sink-volume -0 | grep -Eo [0-9]+%
+interval=1
+
+
